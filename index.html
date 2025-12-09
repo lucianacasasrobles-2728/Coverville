@@ -20,21 +20,39 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1 class="hero-title">Welcome to Cloverville</h1>
-        <p class="hero-subtitle">
-            A sustainable community built through shared goals, green actions, and collaboration.
-        </p>
+    <!-- MAIN LAYOUT (NECESSARY FOR THE MENU TO WORK) -->
+    <div class="dashboard-container">
 
-        <a class="main-btn" href="dashboard.html">Enter Dashboard</a>
-    </section>
+        <!-- SIDEBAR (NECESSARY FOR THE MENU TO OPEN) -->
+        <div class="sidebar">
+            <button class="tab-btn active" onclick="window.location='index.html'">Home</button>
+            <button class="tab-btn" onclick="window.location='dashboard.html'">Dashboard</button>
+        </div>
+
+        <!-- CONTENT AREA -->
+        <div class="content-area">
+            
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <h1 class="hero-title">Welcome to Cloverville</h1>
+                <p class="hero-subtitle">
+                    A sustainable community built through shared goals, green actions, and collaboration.
+                </p>
+
+                <a class="main-btn" href="dashboard.html">Enter Dashboard</a>
+            </section>
+
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
         <p>&copy; 2025 Cloverville – SEP1 Project</p>
     </footer>
 
+    <script src="js/script.js"></script>
+
 </body>
 </html>
+
 
