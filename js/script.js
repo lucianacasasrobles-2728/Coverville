@@ -29,10 +29,13 @@ function displayData(data) {
     var poolSpan = document.getElementById('communalPool');
     if (poolSpan) poolSpan.textContent = data.communalPointsPool;
 
-    /* ---- GREEN ACTIONS ---- */
+    /* =====================================================
+       GREEN ACTIONS (with View more)
+    ====================================================== */
     var actionsDiv = document.getElementById('greenActions');
     if (actionsDiv) {
         actionsDiv.innerHTML = "";
+
         data.greenActions.forEach(action => {
             var div = document.createElement('div');
             div.classList.add('card');
@@ -40,22 +43,40 @@ function displayData(data) {
             div.innerHTML = `
                 ${action.picture ? `<img src="${action.picture}" alt="${action.title}">` : ""}
                 <h3>${action.title}</h3>
-                <p>${action.description}</p>
-
-                <div class="button-group">
-                    <button class="action-btn">Allocate</button>
-                    <button class="action-btn">Trade</button>
-                    <button class="action-btn">Donate</button>
-                </div>
             `;
+
+            const description = document.createElement("p");
+            description.textContent = action.description;
+            description.classList.add("description");
+            div.appendChild(description);
+
+            if (action.description.length > 120) {
+                const viewMore = document.createElement("span");
+                viewMore.classList.add("view-more");
+                viewMore.textContent = "View more";
+
+                viewMore.addEventListener("click", () => {
+                    description.classList.toggle("expanded");
+                    viewMore.textContent =
+                        description.classList.contains("expanded")
+                            ? "View less"
+                            : "View more";
+                });
+
+                div.appendChild(viewMore);
+            }
+
             actionsDiv.appendChild(div);
         });
     }
 
-    /* ---- COMMUNAL GOALS ---- */
+    /* =====================================================
+       COMMUNAL GOALS
+    ====================================================== */
     var goalsDiv = document.getElementById('communalGoals');
     if (goalsDiv) {
         goalsDiv.innerHTML = "";
+
         data.communalGoals.forEach(goal => {
             var divGoal = document.createElement('div');
             divGoal.classList.add('card');
@@ -75,10 +96,13 @@ function displayData(data) {
         });
     }
 
-    /* ---- TRADES ---- */
+    /* =====================================================
+       TRADES
+    ====================================================== */
     var tradesDiv = document.getElementById('trades');
     if (tradesDiv) {
         tradesDiv.innerHTML = "";
+
         data.trades.forEach(trade => {
             var divTrade = document.createElement('div');
             divTrade.classList.add('card');
@@ -94,10 +118,13 @@ function displayData(data) {
         });
     }
 
-    /* ---- TASKS ---- */
+    /* =====================================================
+       COMMUNAL TASKS
+    ====================================================== */
     var tasksDiv = document.getElementById('communalTasks');
     if (tasksDiv) {
         tasksDiv.innerHTML = "";
+
         data.communalTasks.forEach(task => {
             var divTask = document.createElement('div');
             divTask.classList.add('card');
@@ -131,34 +158,32 @@ function showTab(tabId, button) {
 
     if (button) button.classList.add("active");
 
-    // Close sidebar automatically after selecting a tab (mobile)
     document.querySelector(".sidebar").style.display = "none";
 }
 
 /* -------------------------------------------------------
-   HAMBURGER MENU TOGGLE (UNIVERSAL)
+   HAMBURGER MENU TOGGLE
 -------------------------------------------------------- */
 const menuToggle = document.querySelector(".menu-toggle");
 const sidebar = document.querySelector(".sidebar");
 
 if (menuToggle) {
     menuToggle.addEventListener("click", () => {
-        sidebar.style.display = (sidebar.style.display === "block") ? "none" : "block";
+        sidebar.style.display =
+            (sidebar.style.display === "block") ? "none" : "block";
     });
 }
 
-/* Close sidebar if user clicks OUTSIDE */
-document.addEventListener("click", function(e) {
-    if (
-        !e.target.closest(".sidebar") &&
-        !e.target.closest(".menu-toggle")
-    ) {
+/* Close sidebar if clicking outside */
+document.addEventListener("click", function (e) {
+    if (!e.target.closest(".sidebar") && !e.target.closest(".menu-toggle")) {
         sidebar.style.display = "none";
     }
 });
 
 /* -------------------------------------------------------
-   START PROGRAM WHEN PAGE OPENS
+   START PROGRAM
 -------------------------------------------------------- */
 loadData();
 showTab('overview');
+
