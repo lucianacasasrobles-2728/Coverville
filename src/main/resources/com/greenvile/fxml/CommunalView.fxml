@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.greenvile.view.CommunalController">
+    <HBox spacing="10">
+        <VBox spacing="10">
+            <Label text="Communal Goals"/>
+            <ListView fx:id="goalListView" prefHeight="300" prefWidth="250"/>
+            <HBox spacing="5">
+                <Button text="Add" onAction="#onAddGoal"/>
+                <Button fx:id="updateGoalButton" text="Update" onAction="#onUpdateGoal"/>
+                <Button fx:id="deleteGoalButton" text="Delete" onAction="#onDeleteGoal"/>
+            </HBox>
+            <HBox spacing="5">
+                <Button fx:id="toggleActiveButton" text="Toggle Active" onAction="#onToggleActive"/>
+                <Button fx:id="completeGoalButton" text="Complete" onAction="#onCompleteGoal"/>
+            </HBox>
+        </VBox>
+        <VBox spacing="10">
+            <Label text="Tasks"/>
+            <ListView fx:id="taskListView" prefHeight="300" prefWidth="250"/>
+            <HBox spacing="5">
+                <Button fx:id="addTaskButton" text="Add" onAction="#onAddTask"/>
+                <Button fx:id="updateTaskButton" text="Update" onAction="#onUpdateTask"/>
+                <Button fx:id="deleteTaskButton" text="Delete" onAction="#onDeleteTask"/>
+            </HBox>
+            <HBox spacing="5">
+                <Button fx:id="completeTaskButton" text="Complete" onAction="#onCompleteTask"/>
+                <Button fx:id="toggleTaskDisplayButton" text="Toggle Display" onAction="#onToggleTaskDisplay"/>
+            </HBox>
+        </VBox>
+    </HBox>
+    <Button text="Manage Default Tasks" onAction="#onOpenDefaultTasks"/>
+</VBox>

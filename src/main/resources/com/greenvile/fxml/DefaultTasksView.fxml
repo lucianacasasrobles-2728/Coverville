@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.greenvile.view.DefaultTasksController">
+    <Label text="Default Tasks (added to new Communal Goals automatically)"/>
+    <ListView fx:id="taskListView" prefHeight="300"/>
+    <HBox spacing="10">
+        <Button text="Add" onAction="#onAdd"/>
+        <Button fx:id="updateButton" text="Update" onAction="#onUpdate"/>
+        <Button fx:id="deleteButton" text="Delete" onAction="#onDelete"/>
+    </HBox>
+</VBox>

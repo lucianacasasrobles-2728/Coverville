@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.greenvile.view.ResidentEditController">
+    <Label fx:id="errorLabel" style="-fx-text-fill: red;"/>
+    <HBox spacing="10">
+        <Label text="Full Name:*"/>
+        <TextField fx:id="fullNameField" prefWidth="200"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Phone:"/>
+        <TextField fx:id="phoneField" prefWidth="200"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Email:"/>
+        <TextField fx:id="emailField" prefWidth="200"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Address:*"/>
+        <TextField fx:id="addressField" prefWidth="200"/>
+    </HBox>
+    <HBox spacing="10">
+        <Button fx:id="saveButton" text="Save" onAction="#onSave"/>
+        <Button text="Cancel" onAction="#onCancel"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.greenvile.view.MainMenuController">
+    <Label text="Greenvile Admin Panel" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Button text="Residents" onAction="#openResidents" prefWidth="200"/>
+    <Button text="Green Actions" onAction="#openGreenActions" prefWidth="200"/>
+    <Button text="Communal Tasks" onAction="#openCommunal" prefWidth="200"/>
+    <Button text="Trade" onAction="#openTrades" prefWidth="200"/>
+</VBox>

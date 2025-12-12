@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.greenvile.view.TradeController">
+    <ListView fx:id="tradeListView" prefHeight="300"/>
+    <HBox spacing="10">
+        <Button text="Add" onAction="#onAdd"/>
+        <Button fx:id="updateButton" text="Update" onAction="#onUpdate"/>
+        <Button fx:id="deleteButton" text="Delete" onAction="#onDelete"/>
+    </HBox>
+    <HBox spacing="10">
+        <Button fx:id="completeButton" text="Mark Complete" onAction="#onComplete"/>
+        <Button fx:id="toggleDisplayButton" text="Toggle Website Display" onAction="#onToggleDisplay"/>
+    </HBox>
+</VBox>

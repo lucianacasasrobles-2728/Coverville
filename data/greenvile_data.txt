@@ -1,0 +1,28 @@
+COMMUNAL_POOL
+0
+END_COMMUNAL_POOL
+RESIDENTS
+1|Test1|test1|test1|test1|26|2025-12-04
+2|test2|test2|test2|test2|19|2025-12-04
+END_RESIDENTS
+GREEN_ACTIONS
+1|test3|test3|C:\Users\Roman\Desktop\Memes and stuff\important\121998798_3997113440316451_5487825145385945524_o.jpg|10|false|1
+2|Test5|Test5|C:\Users\Roman\Desktop\Memes and stuff\important\122135896_3386774164735931_3411639805262269419_n.jpg|10|false|2
+3|tewst|tewst||10|false|2
+END_GREEN_ACTIONS
+DEFAULT_TASKS
+1|TestD|TestD|5
+END_DEFAULT_TASKS
+COMMUNAL_GOALS
+GOAL|1|test4|test4|400|20|false|true
+TASK|1|Test6|test6|30|true|false|2
+GOAL|2|testD2|testD2|5|20|false|true
+TASK|1|TestD|TestD|5|true|false|1
+GOAL|3|Test For the points|test|100|10|false|true
+TASK|1|TestD|TestD|5|false|false|
+GOAL|4|test ftp|test|100|10|false|true
+TASK|1|TestD|TestD|5|false|false|
+END_COMMUNAL_GOALS
+TRADES
+1|Trade 6|trade 6|C:\Users\Roman\Desktop\Memes and stuff\important\FB_IMG_1581460422175.jpg|20|1|true|true|2
+END_TRADES

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.greenvile.view.GreenActionEditController">
+    <Label fx:id="errorLabel" style="-fx-text-fill: red;"/>
+    <HBox spacing="10">
+        <Label text="Title:*"/>
+        <TextField fx:id="titleField" prefWidth="200"/>
+    </HBox>
+    <VBox spacing="5">
+        <Label text="Description:*"/>
+        <TextArea fx:id="descriptionArea" prefHeight="100"/>
+    </VBox>
+    <HBox spacing="10">
+        <Label text="Points:"/>
+        <TextField fx:id="pointsField" prefWidth="100"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Picture:"/>
+        <TextField fx:id="pictureField" prefWidth="150"/>
+        <Button text="Browse" onAction="#onBrowsePicture"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Participant:"/>
+        <ComboBox fx:id="participantCombo" prefWidth="200"/>
+    </HBox>
+    <HBox spacing="10">
+        <Button fx:id="saveButton" text="Save" onAction="#onSave"/>
+        <Button text="Cancel" onAction="#onCancel"/>
+    </HBox>
+</VBox>
